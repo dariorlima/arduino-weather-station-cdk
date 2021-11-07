@@ -1,9 +1,14 @@
 import * as cdk from '@aws-cdk/core';
+import { SensorsApi } from './constructs/api';
+import { SensorsDatabase } from './constructs/database';
 
 export class InfraStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
+    const sensorsDatabase = new SensorsDatabase(this, 'SensorsDatabase');
+    const sensorsApi = new SensorsApi(this, 'SensorsApi');
+
+    sensorsDatabase.allowCrud(sensorsApi.getHandler());
   }
 }
