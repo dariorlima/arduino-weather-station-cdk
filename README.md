@@ -1,10 +1,10 @@
-# Welcome to your CDK TypeScript project!
+# Arduino Weather Station CDK
 
-This is a blank project for TypeScript development with CDK.
+This is the infrastructure code of the Weather Station.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+You can find the Serial Reader part of this project and instructions to get it ready here: https://github.com/dariorlima/arduino-weather-station-reader
 
-## Useful commands
+## Basic commands
 
  * `npm run build`   compile typescript to js
  * `npm run watch`   watch for changes and compile
@@ -12,3 +12,14 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
  * `cdk deploy`      deploy this stack to your default AWS account/region
  * `cdk diff`        compare deployed stack with current state
  * `cdk synth`       emits the synthesized CloudFormation template
+
+## Arduino Sensors
+
+- DHT11 - Temperature and Humidity
+- LM75 - High Precision Temperature Sensor
+
+## Arduino Libraries
+
+- LM75A.h
+- dht11
+- ArduinoJson
